@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:View xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		xmlns:s="library://ns.adobe.com/flex/spark" title="Play" creationComplete="onCreationComplete();">
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	<fx:Script>
+		<![CDATA[
+      import model.PodcastModel;
+      
+      import mx.collections.ArrayCollection;
+			
+      [Bindable]
+			private var podcastModel:PodcastModel = PodcastModel.getInstance();
+			
+			
+			private function onCreationComplete():void
+			{
+				var obj:Object = new Object();
+				
+				obj.name = "Ace on the House";
+				obj.releaseDate = new Date(2011,10,19);
+				obj.Description = "ACE Broadcasting brings you \"Ace On The House\", a Home Improvement Q&A show hosted by Adam Carolla. Adam takes your questions via Phone, Twitter or Facebook and provides answers.";
+				obj.URI = "http://feeds.feedburner.com/AceOnTheHouse";
+				obj.image = "http://assets.libsyn.com/content/2952476";
+				
+        podcastModel.podcastCollection.addItem(obj);
+				
+				var obj1:Object = new Object();
+				
+				obj1.name = "The Adam Carolla Show";
+				obj1.releaseDate = new Date(2011,10,24);
+				obj1.Description = "Welcome to the Adam Carolla Podcast! The new home for the rantings and ravings of Adam Carolla, with Bald Bryan on sound effects and and Alison Rosen on news.Check it out Adam hangs out with some his pals, like: Larry Miller, David Allen Grier, Dr. Drew Pinksy, Dana Gould, Doug Benson, and many, many more.";
+				obj1.URI = "http://feeds.feedburner.com/TheAdamCarollaPodcast";
+				obj1.image = "http://assets.libsyn.com/content/1984315";
+				
+        podcastModel.podcastCollection.addItem(obj1);
+								
+				var obj2:Object = new Object();
+				
+				obj2.name = "Doug Love Movies";
+				obj2.releaseDate = new Date(2011,10,23);
+				obj2.Description = "Comedian Doug Benson (Super High Me, Last Comic Standing) invites his friends to sit down and discuss his first love: movies!";
+				obj2.URI = "http://feeds.feedburner.com/DougLoveMovies";
+				obj2.image = "http://assets.libsyn.com/content/1912005";
+				
+        podcastModel.podcastCollection.addItem(obj2);
+				
+				var obj3:Object = new Object();
+				
+				obj3.name = "ESPN: The B.S. Report with Bill Simmons";
+				obj3.releaseDate = new Date(2011,10,22);
+				obj3.Description = "Grantland's Bill Simmons talks about his favorite things in sports: the Celtics, the Red Sox, his fantasy team and more.";
+				obj3.URI = "http://sports.espn.go.com/espnradio/podcast/feeds/itunes/podCast?id=2864045";
+				obj3.image = "http://a.espncdn.com/i/espnradio/stations/espn/podcasts/bs_report_subway_300.jpg";
+				
+        podcastModel.podcastCollection.addItem(obj3);
+				
+				var obj4:Object = new Object();
+				
+				obj4.name = "The Film Vault";
+				obj4.releaseDate = new Date(2011,10,25);
+				obj4.Description = "Discover movies you may have missed and laugh about the ones you should have while hosts Anderson Cowan and Bryan Bishop discuss their contrasting tastes in film through weekly Top 5 lists. With guests ranging from film and television stars to comedians, segments like Flickfessions and Red Light/Green Light with Miss Movies, and an Instant Stream of the week, The Film Vault will never let your movie queue go empty.";
+				obj4.URI = "http://feeds.feedburner.com/TheFilmVault";
+				obj4.image = "http://assets.libsyn.com/content/3690778";
+				
+        podcastModel.podcastCollection.addItem(obj4);
+				
+				var obj5:Object = new Object();
+				
+				obj5.name = "How Did This Get Made";
+				obj5.releaseDate = new Date(2011,10,22);
+				obj5.Description = "Have you ever seen a movie so bad that it’s amazing? Paul Scheer, June Diane Raphael and Jason Mantzoukas want to hear about it! We’ll watch it with our funniest friends, and report back to you with the results.";
+				obj5.URI = "http://feeds.feedburner.com/HowDidThisGetMade";
+				obj5.image = "http://assets.libsyn.com/content/2871950";
+				
+        podcastModel.podcastCollection.addItem(obj5);
+				
+				var obj6:Object = new Object();
+				
+				obj6.name = "Rush 24/7 Podcast";
+				obj6.releaseDate = new Date(2011,10,28);
+				obj6.Description = "Rush 24/7 Podcast";
+				obj6.URI = "http://rss.premiereradio.net/podcast/rushlimb.xml";
+				obj6.image = "http://download.premiereradio.net/rss/rushlimb.jpg";
+				
+        podcastModel.podcastCollection.addItem(obj6);
+				
+				
+				var obj7:Object = new Object();
+				
+				obj7.name = "Weekend Confirmed: The Video Game Show";
+				obj7.releaseDate = new Date(2011,10,23);
+				obj7.Description = "Video games from all the platforms are the center of attention for hosts Garnett Lee and Jeff Cannata. Each Friday on their audio podcast they cover the best of what they've played, top news stories, comments from the Shacknews community, opinion, and welcome industry guests.";
+				obj7.URI = "http://www.shacknews.com/extras/podcast/weekendconfirmed.xml";
+				obj7.image = "http://shacknews.s3.amazonaws.com/images/20110701/podcast_logo_agenda_18625.jpg";
+				
+        podcastModel.podcastCollection.addItem(obj7);
+				
+				
+				
+			}
+			
+		]]>
+	</fx:Script>
+	<s:List width="100%" height="100%" 
+			dataProvider="{podcastModel.podcastCollection}" 
+			itemRenderer="views.itemrenderers.PlayItemRenderer">
+		
+		<s:layout>
+			<s:VerticalLayout gap="0" variableRowHeight="false"/>
+		</s:layout>
+		
+		
+	</s:List>
+</s:View>
